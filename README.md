@@ -1,7 +1,7 @@
 
 ## React Context
 
-This basics rundown:
+### The basic rundown:
 
 - create a file for the Context you wish to create (MainContext.js)
     - ```const MainContext = React.createContext({});```
