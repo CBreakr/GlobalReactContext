@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  margin: 12px;
+}
+
+.parent-component {
+  margin: 4px auto;
+  padding: 2px;
+  border: 2px solid black;
+  width: 50%;
+}
+
+.child-component {
+  margin: 4px auto;
+  padding: 2px;
+  border: 2px solid black;
+  width: 40%
+}

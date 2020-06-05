@@ -1,26 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Parent from "./Parent";
+
+import MainContext from "./MainContext"
+
+export default class App extends React.Component {
+
+  state = {
+    valOne: "20",
+    valTwo: "100",
+    editMe: "default"
+  }
+
+  /*
+
+  dispatch = (action) => {
+    newState = this.reducer(action);
+    this.setState(newState);
+  }
+
+  reducer = (action) => {
+
+  }
+
+  */
+
+  randomize = () => {
+    this.setState({
+      valOne: Math.floor(Math.random()*100),
+      valTwo: Math.floor(Math.random()*100)
+    });
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <MainContext.Provider value={{...this.state, update: this.setState.bind(this)}}>
+          <div>Edit Value: {this.state.editMe}</div>
+          <button  onClick={this.randomize}>Set Random</button>
+          <Parent />
+        </MainContext.Provider>
+      </div>
+    );
+  }
 }
 
-export default App;
