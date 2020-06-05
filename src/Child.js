@@ -22,6 +22,7 @@ export default class Child extends React.Component {
 
     submit = (event) => {
         event.preventDefault();
+        // call the function which we passed down as a Context value
         this.context.update({
             editMe: this.state.input
         });
@@ -42,6 +43,11 @@ export default class Child extends React.Component {
             <div className="child-component">
                 <h4>CHILD</h4>
                 <div>
+                    {
+                        /*
+                        use this.context to refer to values set by the Context provider
+                        */
+                    }
                     <span>{this.context.valOne}</span>
                     <br />
                     <span>{this.context.valTwo}</span>

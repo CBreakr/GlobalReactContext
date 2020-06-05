@@ -13,19 +13,6 @@ export default class App extends React.Component {
     editMe: "default"
   }
 
-  /*
-
-  dispatch = (action) => {
-    newState = this.reducer(action);
-    this.setState(newState);
-  }
-
-  reducer = (action) => {
-
-  }
-
-  */
-
   randomize = () => {
     this.setState({
       valOne: Math.floor(Math.random()*100),
