@@ -10,7 +10,7 @@ export default class Child extends React.Component {
 
     //
     //
-    //
+    // this line is necessary in order to use Context
     //
     //
     static contextType = MainContext;
